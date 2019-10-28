@@ -1,7 +1,15 @@
+<?php
+  $host = "localhost";
+  $user = "root";
+  $clave = "";
+  $bd = "proyectoU";
+  $conectar = mysqli_connect($host,$user,$clave,$bd);
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Inicio</title>
+	<title>Grados</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="./css/main.css">
@@ -13,7 +21,7 @@
 		<div class="full-box dashboard-sideBar-ct">
 			<!--SideBar Title -->
 			<div class="full-box text-uppercase text-center text-titles dashboard-sideBar-title">
-				company <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
+				Colegio <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
 			</div>
 			<!-- SideBar User info -->
 			<div class="full-box dashboard-sideBar-UserInfo">
@@ -47,7 +55,7 @@
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
-							<a href="grados.php"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>Grados</a>
+							<a href="grados.php"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i> Grados</a>
 						</li>
 						<li>
 							<a href="subject.html"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Materias</a>
@@ -56,7 +64,7 @@
 				</li>
 				<li>
 					<a href="#!" class="btn-sideBar-SubMenu">
-						<i class="zmdi zmdi-account-add zmdi-hc-fw"></i> Usuarios <i class="zmdi zmdi-caret-down pull-right"></i>
+						<i class="zmdi zmdi-account-add zmdi-hc-fw"></i> Usuarios<i class="zmdi zmdi-caret-down pull-right"></i>
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
@@ -66,7 +74,7 @@
 							<a href="teacher.html"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> Profesores</a>
 						</li>
 						<li>
-							<a href="student.html"><i class="zmdi zmdi-face zmdi-hc-fw"></i> Estudiantes</a>
+							<a href="student.html"><i class="zmdi zmdi-face zmdi-hc-fw"></i> Estudiante</a>
 						</li>
 						<li>
 							<a href="representative.html"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i> Padres</a>
@@ -75,7 +83,7 @@
 				</li>
 				<li>
 					<a href="#!" class="btn-sideBar-SubMenu">
-						<i class="zmdi zmdi-card zmdi-hc-fw"></i> Pago <i class="zmdi zmdi-caret-down pull-right"></i>
+						<i class="zmdi zmdi-card zmdi-hc-fw"></i> Pagos <i class="zmdi zmdi-caret-down pull-right"></i>
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
@@ -92,7 +100,7 @@
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
-							<a href="school.html"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Colegio </a>
+							<a href="school.html"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Escuela</a>
 						</li>
 					</ul>
 				</li>
@@ -129,119 +137,104 @@
 		<!-- Content page -->
 		<div class="container-fluid">
 			<div class="page-header">
-			  <h1 class="text-titles">Sistema<small> de Usuarios</small></h1>
+			  <h1 class="text-titles"><i class="zmdi zmdi-timer zmdi-hc-fw"></i> Grados <small> del Colegio</small></h1>
 			</div>
-		</div>
-		<div class="full-box text-center" style="padding: 30px 10px;">
-			<article class="full-box tile">
-				<div class="full-box tile-title text-center text-titles text-uppercase">
-					Admin
-				</div>
-				<div class="full-box tile-icon text-center">
-					<i class="zmdi zmdi-account"></i>
-				</div>
-				<div class="full-box tile-number text-titles">
-					<p class="full-box">7</p>
-					<small>Registro</small>
-				</div>
-			</article>
-			<article class="full-box tile">
-				<div class="full-box tile-title text-center text-titles text-uppercase">
-					Profesores
-				</div>
-				<div class="full-box tile-icon text-center">
-					<i class="zmdi zmdi-male-alt"></i>
-				</div>
-				<div class="full-box tile-number text-titles">
-					<p class="full-box">10</p>
-					<small>Registros</small>
-				</div>
-			</article>
-			<article class="full-box tile">
-				<div class="full-box tile-title text-center text-titles text-uppercase">
-					Estudiantes
-				</div>
-				<div class="full-box tile-icon text-center">
-					<i class="zmdi zmdi-face"></i>
-				</div>
-				<div class="full-box tile-number text-titles">
-					<p class="full-box">70</p>
-					<small>Registro</small>
-				</div>
-			</article>
-			<article class="full-box tile">
-				<div class="full-box tile-title text-center text-titles text-uppercase">
-					Padres
-				</div>
-				<div class="full-box tile-icon text-center">
-					<i class="zmdi zmdi-male-female"></i>
-				</div>
-				<div class="full-box tile-number text-titles">
-					<p class="full-box">70</p>
-					<small>Registro</small>
-				</div>
-			</article>
+			<p class="lead">Todos los grados que tenemos en el colegio:</p>
 		</div>
 		<div class="container-fluid">
-			<div class="page-header">
-			  <h1 class="text-titles">Sistema <small>Cronograma</small></h1>
+			<div class="row">
+				<div class="col-xs-12">
+					<ul class="nav nav-tabs" style="margin-bottom: 15px;">
+					  	<li class="active"><a href="#new" data-toggle="tab">Agregar</a></li>
+					  	<li><a href="#list" data-toggle="tab">List</a></li>
+					</ul>
+					<div id="myTabContent" class="tab-content">
+						<div class="tab-pane fade active in" id="new">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-xs-12 col-md-10 col-md-offset-1">
+									    <form action="">
+									    	<div class="form-group label-floating">
+											  <label class="control-label">Name</label>
+											  <input class="form-control" type="text">
+											</div>
+											<div class="form-group">
+										      <label class="control-label">Status</label>
+										        <select class="form-control">
+										          <option>Active</option>
+										          <option>Disable</option>
+										        </select>
+										    </div>
+											<div class="form-group">
+											  <label class="control-label">Start Date</label>
+											  <input class="form-control" type="date">
+											</div>
+											<div class="form-group">
+											  <label class="control-label">End Date</label>
+											  <input class="form-control" type="date">
+											</div>
+											<div class="form-group label-floating">
+											  <label class="control-label">Amount</label>
+											  <input class="form-control" type="text">
+											</div>
+											<div class="form-group">
+										        <label class="control-label">Year</label>
+										        <select class="form-control">
+										          <option>2017</option>
+										          <option>2016</option>
+										        </select>
+										    </div>
+										    <p class="text-center">
+										    	<button href="#!" class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i> Save</button>
+										    </p>
+									    </form>
+									</div>
+								</div>
+							</div>
+						</div>
+					  	<div class="tab-pane fade" id="list">
+							<div class="table-responsive">
+								<table class="table table-hover text-center">
+									<thead>
+										<tr>
+											<th class="text-center">#</th>
+											<th class="text-center">Nombre</th>
+											<th class="text-center">Materias</th>
+											<th class="text-center">Profesor</th>
+										</tr>
+									</thead>
+									<tbody>
+                                    <?php
+                                        $sql="SELECT * FROM grados";
+                                        $result = mysqli_query($conectar, $sql);
+                                        while ($mostrar=mysqli_fetch_array($result)){
+
+                                        ?>
+										<tr>
+											<td><?php echo $mostrar['Id']?></td>
+											<td><?php echo $mostrar['Nombre']?></td>
+											<td></td>
+											<td></td>
+										</tr>
+                                        <?php
+                                        }
+                                        ?>
+									</tbody>
+								</table>
+								<ul class="pagination pagination-sm">
+								  	<li class="disabled"><a href="#!">«</a></li>
+								  	<li class="active"><a href="#!">1</a></li>
+								  	<li><a href="#!">2</a></li>
+								  	<li><a href="#!">3</a></li>
+								  	<li><a href="#!">4</a></li>
+								  	<li><a href="#!">5</a></li>
+								  	<li><a href="#!">»</a></li>
+								</ul>
+							</div>
+					  	</div>
+					</div>
+				</div>
 			</div>
-			<section id="cd-timeline" class="cd-container">
-                <div class="cd-timeline-block">
-                    <div class="cd-timeline-img">
-                        <img src="./assets/img/avatar.jpg" alt="user-picture">
-                    </div>
-                    <div class="cd-timeline-content">
-                        <h4 class="text-center text-titles">1 - Name (Admin)</h4>
-                        <p class="text-center">
-                            <i class="zmdi zmdi-timer zmdi-hc-fw"></i> Start: <em>7:00 AM</em> &nbsp;&nbsp;&nbsp; 
-                            <i class="zmdi zmdi-time zmdi-hc-fw"></i> End: <em>7:17 AM</em>
-                        </p>
-                        <span class="cd-date"><i class="zmdi zmdi-calendar-note zmdi-hc-fw"></i> 07/07/2016</span>
-                    </div>
-                </div>  
-                <div class="cd-timeline-block">
-                    <div class="cd-timeline-img">
-                        <img src="./assets/img/avatar.jpg" alt="user-picture">
-                    </div>
-                    <div class="cd-timeline-content">
-                        <h4 class="text-center text-titles">2 - Name (Teacher)</h4>
-                        <p class="text-center">
-                            <i class="zmdi zmdi-timer zmdi-hc-fw"></i> Start: <em>7:00 AM</em> &nbsp;&nbsp;&nbsp; 
-                            <i class="zmdi zmdi-time zmdi-hc-fw"></i> End: <em>7:17 AM</em>
-                        </p>
-                        <span class="cd-date"><i class="zmdi zmdi-calendar-note zmdi-hc-fw"></i> 07/07/2016</span>
-                    </div>
-                </div>
-                <div class="cd-timeline-block">
-                    <div class="cd-timeline-img">
-                        <img src="./assets/img/avatar.jpg" alt="user-picture">
-                    </div>
-                    <div class="cd-timeline-content">
-                        <h4 class="text-center text-titles">3 - Name (Student)</h4>
-                        <p class="text-center">
-                            <i class="zmdi zmdi-timer zmdi-hc-fw"></i> Start: <em>7:00 AM</em> &nbsp;&nbsp;&nbsp; 
-                            <i class="zmdi zmdi-time zmdi-hc-fw"></i> End: <em>7:17 AM</em>
-                        </p>
-                        <span class="cd-date"><i class="zmdi zmdi-calendar-note zmdi-hc-fw"></i> 07/07/2016</span>
-                    </div>
-                </div>
-                <div class="cd-timeline-block">
-                    <div class="cd-timeline-img">
-                        <img src="./assets/img/avatar.jpg" alt="user-picture">
-                    </div>
-                    <div class="cd-timeline-content">
-                        <h4 class="text-center text-titles">4 - Name (Personal Ad.)</h4>
-                        <p class="text-center">
-                            <i class="zmdi zmdi-timer zmdi-hc-fw"></i> Start: <em>7:00 AM</em> &nbsp;&nbsp;&nbsp; 
-                            <i class="zmdi zmdi-time zmdi-hc-fw"></i> End: <em>7:17 AM</em>
-                        </p>
-                        <span class="cd-date"><i class="zmdi zmdi-calendar-note zmdi-hc-fw"></i> 07/07/2016</span>
-                    </div>
-                </div>   
-            </section>
-
-
 		</div>
 	</section>
 
