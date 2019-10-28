@@ -153,37 +153,19 @@
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col-xs-12 col-md-10 col-md-offset-1">
-									    <form action="">
+									    <form action="insert.php" method="post">
 									    	<div class="form-group label-floating">
-											  <label class="control-label">Name</label>
-											  <input class="form-control" type="text">
-											</div>
-											<div class="form-group">
-										      <label class="control-label">Status</label>
-										        <select class="form-control">
-										          <option>Active</option>
-										          <option>Disable</option>
-										        </select>
-										    </div>
-											<div class="form-group">
-											  <label class="control-label">Start Date</label>
-											  <input class="form-control" type="date">
-											</div>
-											<div class="form-group">
-											  <label class="control-label">End Date</label>
-											  <input class="form-control" type="date">
+											  <label class="control-label">Nombre</label>
+											  <input class="form-control" type="text" name="Nombre">
 											</div>
 											<div class="form-group label-floating">
-											  <label class="control-label">Amount</label>
+										      <label class="control-label">Materia</label>
+                                              <input class="form-control" type="text">
+										       </div>
+											<div class="form-group label-floating">
+											  <label class="control-label">Profesor</label>
 											  <input class="form-control" type="text">
 											</div>
-											<div class="form-group">
-										        <label class="control-label">Year</label>
-										        <select class="form-control">
-										          <option>2017</option>
-										          <option>2016</option>
-										        </select>
-										    </div>
 										    <p class="text-center">
 										    	<button href="#!" class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i> Save</button>
 										    </p>
