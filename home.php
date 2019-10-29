@@ -13,7 +13,7 @@
 		<div class="full-box dashboard-sideBar-ct">
 			<!--SideBar Title -->
 			<div class="full-box text-uppercase text-center text-titles dashboard-sideBar-title">
-				company <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
+				colegio <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
 			</div>
 			<!-- SideBar User info -->
 			<div class="full-box dashboard-sideBar-UserInfo">
@@ -50,7 +50,7 @@
 							<a href="grados.php"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>Grados</a>
 						</li>
 						<li>
-							<a href="subject.html"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Materias</a>
+							<a href="materias.php"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Materias</a>
 						</li>
 					</ul>
 				</li>
@@ -60,16 +60,16 @@
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
-							<a href="admin.html"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Admin</a>
+							<a href="admin.php"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Admin</a>
 						</li>
 						<li>
-							<a href="teacher.html"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> Profesores</a>
+							<a href="profesor.php"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> Profesores</a>
 						</li>
 						<li>
-							<a href="student.html"><i class="zmdi zmdi-face zmdi-hc-fw"></i> Estudiantes</a>
+							<a href="alumno.php"><i class="zmdi zmdi-face zmdi-hc-fw"></i> Estudiantes</a>
 						</li>
 						<li>
-							<a href="representative.html"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i> Padres</a>
+							<a href="padre.php"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i> Padres</a>
 						</li>
 					</ul>
 				</li>
@@ -79,10 +79,10 @@
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
-							<a href="registration.html"><i class="zmdi zmdi-money-box zmdi-hc-fw"></i> Registro</a>
+							<a href="registroP.php"><i class="zmdi zmdi-money-box zmdi-hc-fw"></i> Registro</a>
 						</li>
 						<li>
-							<a href="payments.html"><i class="zmdi zmdi-money zmdi-hc-fw"></i> Pagos</a>
+							<a href="pagos.php"><i class="zmdi zmdi-money zmdi-hc-fw"></i> Pagos</a>
 						</li>
 					</ul>
 				</li>
@@ -92,7 +92,7 @@
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
-							<a href="school.html"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Colegio </a>
+							<a href="data.php"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Colegio </a>
 						</li>
 					</ul>
 				</li>
@@ -111,7 +111,7 @@
 				<li>
 					<a href="#!" class="btn-Notifications-area">
 						<i class="zmdi zmdi-notifications-none"></i>
-						<span class="badge">7</span>
+						<span class="badge"></span>
 					</a>
 				</li>
 				<li>

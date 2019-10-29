@@ -1,5 +1,9 @@
 <?php
- require 'conexion.php';
+  $host = "localhost";
+  $user = "root";
+  $clave = "";
+  $bd = "proyectoU";
+  $conectar = mysqli_connect($host,$user,$clave,$bd);
 ?>
 
 <!DOCTYPE html>
@@ -68,7 +72,7 @@
 							<a href="admin.php"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Admin</a>
 						</li>
 						<li>
-							<a href="profesor.php"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> Profesores</a>
+							<a href="profesores.php"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> Profesores</a>
 						</li>
 						<li>
 							<a href="alumno.php"><i class="zmdi zmdi-face zmdi-hc-fw"></i> Estudiantes</a>
@@ -134,9 +138,9 @@
 		<!-- Content page -->
 		<div class="container-fluid">
 			<div class="page-header">
-			  <h1 class="text-titles"><i class="zmdi zmdi-timer zmdi-hc-fw"></i> Profesores <small> del Colegio</small></h1>
+			  <h1 class="text-titles"><i class="zmdi zmdi-timer zmdi-hc-fw"></i> Materias <small> del Colegio</small></h1>
 			</div>
-			<p class="lead">Todos los profesores que tenemos en el colegio:</p>
+			<p class="lead">Todos los grados que tenemos en el colegio:</p>
 		</div>
 		<div class="container-fluid">
 			<div class="row">
@@ -150,34 +154,22 @@
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col-xs-12 col-md-10 col-md-offset-1">
-									    <form action="insertP.php" method="post">
+									    <form action="insertM.php" method="post">
 									    	<div class="form-group label-floating">
 											  <label class="control-label">Id</label>
 											  <input class="form-control" type="text" name="id">
 											</div>
 											<div class="form-group label-floating">
-										      <label class="control-label">Id_rol</label>
-                                              <input class="form-control" type="text" name="id_rol">
+										      <label class="control-label">Nombre</label>
+                                              <input class="form-control" type="text" name="Nombre">
 										       </div>
 											<div class="form-group label-floating">
-											  <label class="control-label">Nombre</label>
-											  <input class="form-control" type="text" name="Nombre">
+											  <label class="control-label">Materia</label>
+											  <input class="form-control" type="text">
 											</div>
 											<div class="form-group label-floating">
-											  <label class="control-label">Apellido</label>
-											  <input class="form-control" type="text" name="Apellido">
-											</div>
-											<div class="form-group label-floating">
-											  <label class="control-label">Usuario</label>
-											  <input class="form-control" type="text" name="Usuario">
-											</div>
-											<div class="form-group label-floating">
-											  <label class="control-label">Password</label>
-											  <input class="form-control" type="password" name="Password">
-											</div>
-                                            <div class="form-group label-floating">
-											  <label class="control-label">Estatus</label>
-											  <input class="form-control" type="text" name="estatus">
+											  <label class="control-label">Profesor</label>
+											  <input class="form-control" type="text">
 											</div>
 										    <p class="text-center">
 										    	<button href="#!" class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i> Guardar</button>
@@ -193,27 +185,23 @@
 									<thead>
 										<tr>
 											<th class="text-center">#</th>
-											<th class="text-center">rol</th>
 											<th class="text-center">Nombre</th>
-											<th class="text-center">Apellido</th>
-                                            <th class="text-center">Usuario</th>
-											<th class="text-center">Estatus</th>
+											<th class="text-center">Materias</th>
+											<th class="text-center">Profesor</th>
 										</tr>
 									</thead>
 									<tbody>
                                     <?php
-                                        $sql="SELECT * FROM profesores";
+                                        $sql="SELECT * FROM materias";
                                         $result = mysqli_query($conectar, $sql);
                                         while ($mostrar=mysqli_fetch_array($result)){
 
                                         ?>
 										<tr>
 											<td><?php echo $mostrar['Id']?></td>
-											<td><?php echo $mostrar['Id_rol']?></td>
 											<td><?php echo $mostrar['Nombre']?></td>
-											<td><?php echo $mostrar['Apellido']?></td>
-                                            <td><?php echo $mostrar['Usuario']?></td>
-											<td><?php echo $mostrar['Estatus']?></td>
+											<td></td>
+											<td></td>
 										</tr>
                                         <?php
                                         }

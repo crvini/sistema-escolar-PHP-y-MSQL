@@ -1,5 +1,5 @@
 <?php
- require 'conexion.php';
+  require 'conexion.php';
 ?>
 
 <!DOCTYPE html>
@@ -134,9 +134,9 @@
 		<!-- Content page -->
 		<div class="container-fluid">
 			<div class="page-header">
-			  <h1 class="text-titles"><i class="zmdi zmdi-timer zmdi-hc-fw"></i> Profesores <small> del Colegio</small></h1>
+			  <h1 class="text-titles"><i class="zmdi zmdi-timer zmdi-hc-fw"></i> Alumnos <small> del Colegio</small></h1>
 			</div>
-			<p class="lead">Todos los profesores que tenemos en el colegio:</p>
+			<p class="lead">Todos los alumno que tenemos en el colegio:</p>
 		</div>
 		<div class="container-fluid">
 			<div class="row">
@@ -150,7 +150,7 @@
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col-xs-12 col-md-10 col-md-offset-1">
-									    <form action="insertP.php" method="post">
+									    <form action="insertAlumno.php" method="post">
 									    	<div class="form-group label-floating">
 											  <label class="control-label">Id</label>
 											  <input class="form-control" type="text" name="id">
@@ -158,6 +158,14 @@
 											<div class="form-group label-floating">
 										      <label class="control-label">Id_rol</label>
                                               <input class="form-control" type="text" name="id_rol">
+										       </div>
+                                               <div class="form-group label-floating">
+										      <label class="control-label">Grado</label>
+                                              <input class="form-control" type="text" name="grado">
+										       </div>
+                                               <div class="form-group label-floating">
+										      <label class="control-label">Padre</label>
+                                              <input class="form-control" type="text" name="padre">
 										       </div>
 											<div class="form-group label-floating">
 											  <label class="control-label">Nombre</label>
@@ -170,6 +178,14 @@
 											<div class="form-group label-floating">
 											  <label class="control-label">Usuario</label>
 											  <input class="form-control" type="text" name="Usuario">
+											</div>
+                                            <div class="form-group label-floating">
+											  <label class="control-label">Genero</label>
+											  <input class="form-control" type="text" name="Genero">
+											</div>
+                                            <div class="form-group label-floating">
+											  <label class="control-label">Fecha Nacimiento</label>
+											  <input class="form-control" type="text" name="Nacimiento">
 											</div>
 											<div class="form-group label-floating">
 											  <label class="control-label">Password</label>
@@ -194,15 +210,19 @@
 										<tr>
 											<th class="text-center">#</th>
 											<th class="text-center">rol</th>
-											<th class="text-center">Nombre</th>
+											<th class="text-center">Grado</th>
+											<th class="text-center">Padre</th>
+                                            <th class="text-center">Nombre</th>
 											<th class="text-center">Apellido</th>
                                             <th class="text-center">Usuario</th>
+											<th class="text-center">Genero</th>
+											<th class="text-center">Fecha_Nacimiento</th>
 											<th class="text-center">Estatus</th>
 										</tr>
 									</thead>
 									<tbody>
                                     <?php
-                                        $sql="SELECT * FROM profesores";
+                                        $sql="SELECT * FROM alumnos";
                                         $result = mysqli_query($conectar, $sql);
                                         while ($mostrar=mysqli_fetch_array($result)){
 
@@ -210,9 +230,13 @@
 										<tr>
 											<td><?php echo $mostrar['Id']?></td>
 											<td><?php echo $mostrar['Id_rol']?></td>
+											<td><?php echo $mostrar['Id_grado']?></td>
+                                            <td><?php echo $mostrar['Id_padre']?></td>
 											<td><?php echo $mostrar['Nombre']?></td>
-											<td><?php echo $mostrar['Apellido']?></td>
-                                            <td><?php echo $mostrar['Usuario']?></td>
+                                            <td><?php echo $mostrar['Apellido']?></td>
+											<td><?php echo $mostrar['Usuario']?></td>
+                                            <td><?php echo $mostrar['Genero']?></td>
+											<td><?php echo $mostrar['Fecha_nacimiento']?></td>
 											<td><?php echo $mostrar['Estatus']?></td>
 										</tr>
                                         <?php

@@ -7,9 +7,10 @@
 ?>
 
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Grados</title>
+	<title>Inicio</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="./css/main.css">
@@ -21,7 +22,7 @@
 		<div class="full-box dashboard-sideBar-ct">
 			<!--SideBar Title -->
 			<div class="full-box text-uppercase text-center text-titles dashboard-sideBar-title">
-				Colegio <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
+				colegio <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
 			</div>
 			<!-- SideBar User info -->
 			<div class="full-box dashboard-sideBar-UserInfo">
@@ -55,42 +56,42 @@
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
-							<a href="grados.php"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i> Grados</a>
+							<a href="grados.php"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>Grados</a>
 						</li>
 						<li>
-							<a href="subject.html"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Materias</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="#!" class="btn-sideBar-SubMenu">
-						<i class="zmdi zmdi-account-add zmdi-hc-fw"></i> Usuarios<i class="zmdi zmdi-caret-down pull-right"></i>
-					</a>
-					<ul class="list-unstyled full-box">
-						<li>
-							<a href="admin.html"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Admin</a>
-						</li>
-						<li>
-							<a href="teacher.html"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> Profesores</a>
-						</li>
-						<li>
-							<a href="student.html"><i class="zmdi zmdi-face zmdi-hc-fw"></i> Estudiante</a>
-						</li>
-						<li>
-							<a href="representative.html"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i> Padres</a>
+							<a href="materias.php"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Materias</a>
 						</li>
 					</ul>
 				</li>
 				<li>
 					<a href="#!" class="btn-sideBar-SubMenu">
-						<i class="zmdi zmdi-card zmdi-hc-fw"></i> Pagos <i class="zmdi zmdi-caret-down pull-right"></i>
+						<i class="zmdi zmdi-account-add zmdi-hc-fw"></i> Usuarios <i class="zmdi zmdi-caret-down pull-right"></i>
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
-							<a href="registration.html"><i class="zmdi zmdi-money-box zmdi-hc-fw"></i> Registro</a>
+							<a href="admin.php"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Admin</a>
 						</li>
 						<li>
-							<a href="payments.html"><i class="zmdi zmdi-money zmdi-hc-fw"></i> Pagos</a>
+							<a href="profesor.php"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> Profesores</a>
+						</li>
+						<li>
+							<a href="alumno.php"><i class="zmdi zmdi-face zmdi-hc-fw"></i> Estudiantes</a>
+						</li>
+						<li>
+							<a href="padre.php"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i> Padres</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#!" class="btn-sideBar-SubMenu">
+						<i class="zmdi zmdi-card zmdi-hc-fw"></i> Pago <i class="zmdi zmdi-caret-down pull-right"></i>
+					</a>
+					<ul class="list-unstyled full-box">
+						<li>
+							<a href="registroP.php"><i class="zmdi zmdi-money-box zmdi-hc-fw"></i> Registro</a>
+						</li>
+						<li>
+							<a href="pagos.php"><i class="zmdi zmdi-money zmdi-hc-fw"></i> Pagos</a>
 						</li>
 					</ul>
 				</li>
@@ -100,7 +101,7 @@
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
-							<a href="school.html"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Escuela</a>
+							<a href="data.php"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Colegio </a>
 						</li>
 					</ul>
 				</li>
@@ -119,7 +120,7 @@
 				<li>
 					<a href="#!" class="btn-Notifications-area">
 						<i class="zmdi zmdi-notifications-none"></i>
-						<span class="badge">7</span>
+						<span class="badge"></span>
 					</a>
 				</li>
 				<li>
@@ -146,7 +147,7 @@
 				<div class="col-xs-12">
 					<ul class="nav nav-tabs" style="margin-bottom: 15px;">
 					  	<li class="active"><a href="#new" data-toggle="tab">Agregar</a></li>
-					  	<li><a href="#list" data-toggle="tab">List</a></li>
+					  	<li><a href="#list" data-toggle="tab">Lista</a></li>
 					</ul>
 					<div id="myTabContent" class="tab-content">
 						<div class="tab-pane fade active in" id="new">
@@ -155,19 +156,23 @@
 									<div class="col-xs-12 col-md-10 col-md-offset-1">
 									    <form action="insert.php" method="post">
 									    	<div class="form-group label-floating">
-											  <label class="control-label">Nombre</label>
-											  <input class="form-control" type="text" name="Nombre">
+											  <label class="control-label">Id</label>
+											  <input class="form-control" type="text" name="id">
 											</div>
 											<div class="form-group label-floating">
-										      <label class="control-label">Materia</label>
-                                              <input class="form-control" type="text">
+										      <label class="control-label">Nombre</label>
+                                              <input class="form-control" type="text" name="Nombre"> 
 										       </div>
+											<div class="form-group label-floating">
+											  <label class="control-label">Materia</label>
+											  <input class="form-control" type="text">
+											</div>
 											<div class="form-group label-floating">
 											  <label class="control-label">Profesor</label>
 											  <input class="form-control" type="text">
 											</div>
 										    <p class="text-center">
-										    	<button href="#!" class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i> Save</button>
+										    	<button href="#!" class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i> Guardar </button>
 										    </p>
 									    </form>
 									</div>

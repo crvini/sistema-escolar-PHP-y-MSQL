@@ -1,5 +1,9 @@
 <?php
- require 'conexion.php';
+  $host = "localhost";
+  $user = "root";
+  $clave = "";
+  $bd = "proyectoU";
+  $conectar = mysqli_connect($host,$user,$clave,$bd);
 ?>
 
 <!DOCTYPE html>
@@ -134,9 +138,9 @@
 		<!-- Content page -->
 		<div class="container-fluid">
 			<div class="page-header">
-			  <h1 class="text-titles"><i class="zmdi zmdi-timer zmdi-hc-fw"></i> Profesores <small> del Colegio</small></h1>
+			  <h1 class="text-titles"><i class="zmdi zmdi-timer zmdi-hc-fw"></i> Administrador <small> del Colegio</small></h1>
 			</div>
-			<p class="lead">Todos los profesores que tenemos en el colegio:</p>
+			<p class="lead">Todos los administradores que tenemos en el colegio:</p>
 		</div>
 		<div class="container-fluid">
 			<div class="row">
@@ -150,7 +154,7 @@
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col-xs-12 col-md-10 col-md-offset-1">
-									    <form action="insertP.php" method="post">
+									    <form action="insertA.php" method="post">
 									    	<div class="form-group label-floating">
 											  <label class="control-label">Id</label>
 											  <input class="form-control" type="text" name="id">
@@ -202,7 +206,7 @@
 									</thead>
 									<tbody>
                                     <?php
-                                        $sql="SELECT * FROM profesores";
+                                        $sql="SELECT * FROM administrador";
                                         $result = mysqli_query($conectar, $sql);
                                         while ($mostrar=mysqli_fetch_array($result)){
 

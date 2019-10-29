@@ -1,5 +1,5 @@
 <?php
- require 'conexion.php';
+  require 'conexion.php';
 ?>
 
 <!DOCTYPE html>
@@ -134,9 +134,9 @@
 		<!-- Content page -->
 		<div class="container-fluid">
 			<div class="page-header">
-			  <h1 class="text-titles"><i class="zmdi zmdi-timer zmdi-hc-fw"></i> Profesores <small> del Colegio</small></h1>
+			  <h1 class="text-titles"><i class="zmdi zmdi-timer zmdi-hc-fw"></i> Padres <small> del alumnos</small></h1>
 			</div>
-			<p class="lead">Todos los profesores que tenemos en el colegio:</p>
+			<p class="lead">Padres de los alumnos del colegio</p>
 		</div>
 		<div class="container-fluid">
 			<div class="row">
@@ -150,7 +150,7 @@
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col-xs-12 col-md-10 col-md-offset-1">
-									    <form action="insertP.php" method="post">
+									    <form action="insertPadre.php" method="post">
 									    	<div class="form-group label-floating">
 											  <label class="control-label">Id</label>
 											  <input class="form-control" type="text" name="id">
@@ -159,15 +159,31 @@
 										      <label class="control-label">Id_rol</label>
                                               <input class="form-control" type="text" name="id_rol">
 										       </div>
+                                               <div class="form-group label-floating">
+										      <label class="control-label">Nombre Madre</label>
+                                              <input class="form-control" type="text" name="Nombre_materno">
+										       </div>
+                                               <div class="form-group label-floating">
+										      <label class="control-label">Nombre Padre</label>
+                                              <input class="form-control" type="text" name="Nombre_paterno">
+										       </div>
 											<div class="form-group label-floating">
-											  <label class="control-label">Nombre</label>
-											  <input class="form-control" type="text" name="Nombre">
+											  <label class="control-label">Apellido Madre</label>
+											  <input class="form-control" type="text" name="Apellido_materno">
 											</div>
 											<div class="form-group label-floating">
-											  <label class="control-label">Apellido</label>
-											  <input class="form-control" type="text" name="Apellido">
+											  <label class="control-label">Apellido Padre</label>
+											  <input class="form-control" type="text" name="Apellido_paterno">
 											</div>
 											<div class="form-group label-floating">
+											  <label class="control-label">correo</label>
+											  <input class="form-control" type="text" name="correo">
+											</div>
+                                            <div class="form-group label-floating">
+											  <label class="control-label">telefono</label>
+											  <input class="form-control" type="text" name="Telefono">
+											</div>
+                                            <div class="form-group label-floating">
 											  <label class="control-label">Usuario</label>
 											  <input class="form-control" type="text" name="Usuario">
 											</div>
@@ -194,15 +210,19 @@
 										<tr>
 											<th class="text-center">#</th>
 											<th class="text-center">rol</th>
-											<th class="text-center">Nombre</th>
-											<th class="text-center">Apellido</th>
-                                            <th class="text-center">Usuario</th>
+											<th class="text-center">Nombre Madre</th>
+											<th class="text-center">Nombre Padre</th>
+                                            <th class="text-center">Apellido Madre</th>
+											<th class="text-center">Apellido Padre</th>
+                                            <th class="text-center">Correo</th>
+											<th class="text-center">Telefono</th>
+											<th class="text-center">Usuario</th>
 											<th class="text-center">Estatus</th>
 										</tr>
 									</thead>
 									<tbody>
                                     <?php
-                                        $sql="SELECT * FROM profesores";
+                                        $sql="SELECT * FROM padres";
                                         $result = mysqli_query($conectar, $sql);
                                         while ($mostrar=mysqli_fetch_array($result)){
 
@@ -210,9 +230,13 @@
 										<tr>
 											<td><?php echo $mostrar['Id']?></td>
 											<td><?php echo $mostrar['Id_rol']?></td>
-											<td><?php echo $mostrar['Nombre']?></td>
-											<td><?php echo $mostrar['Apellido']?></td>
-                                            <td><?php echo $mostrar['Usuario']?></td>
+											<td><?php echo $mostrar['Nombre_Materno']?></td>
+                                            <td><?php echo $mostrar['Nombre_Paterno']?></td>
+											<td><?php echo $mostrar['Apellido_Materno']?></td>
+                                            <td><?php echo $mostrar['Apellido_Paterno']?></td>
+											<td><?php echo $mostrar['Correo']?></td>
+                                            <td><?php echo $mostrar['Telefono']?></td>
+											<td><?php echo $mostrar['Usuario']?></td>
 											<td><?php echo $mostrar['Estatus']?></td>
 										</tr>
                                         <?php
