@@ -54,9 +54,6 @@
 						<li>
 							<a href="grados.php"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>Grados</a>
 						</li>
-						<li>
-							<a href="materias.php"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Materias</a>
-						</li>
 					</ul>
 				</li>
 				<li>
@@ -181,15 +178,15 @@
 									<thead>
 										<tr>
 											<th class="text-center">#</th>
-											<th class="text-center">Nombre</th>
-											<th class="text-center">Materias</th>
-											<th class="text-center">Profesor</th>
+											<th class="text-center">Grados del colegio</th>
+											<th class="text-center">Materias y Alumnos</th>
 											<th class="text-center">Acciones</th>
+
 										</tr>
 									</thead>
 									<tbody>
                                     <?php
-										$sql="SELECT Gr.Id, Gr.Nombre_grado, Ma.Nombre_materia FROM materias Ma INNER JOIN grados Gr ON Ma.Id_grado = Gr.Id";
+										$sql="SELECT * FROM grados";
                                         $result = mysqli_query($conectar, $sql);
                                         while ($mostrar=mysqli_fetch_array($result)){
 
@@ -197,9 +194,9 @@
 										<tr>
 											<td><?php echo $mostrar['Id']?></td>
 											<td><?php echo $mostrar['Nombre_grado']?></td>
-											<td><<?php echo $mostrar['Nombre_materia']?></td>
-											<td></td>
+											<td><a href="verg.php?id=<?php echo $mostrar['Id']?>">Ver Materias y Almunos</a></td>
 											<td> 
+												
 												<a href="editarg.php?id=<?php echo $mostrar['Id']?>">Editar</a>
 												<a href="eliminar.php?id=<?php echo $mostrar['Id']?>">Eliminar</a>
 											</td>

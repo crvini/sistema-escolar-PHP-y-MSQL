@@ -193,11 +193,9 @@
 									<thead>
 										<tr>
 											<th class="text-center">#</th>
-											<th class="text-center">rol</th>
-											<th class="text-center">Nombre</th>
-											<th class="text-center">Apellido</th>
-                                            <th class="text-center">Usuario</th>
-											<th class="text-center">Estatus</th>
+											<th class="text-center">Nombre del Profesor</th>
+											<th class="text-center">Grados asignados</th>
+											<th class="text-center">Acciones</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -208,12 +206,14 @@
 
                                         ?>
 										<tr>
-											<td><?php echo $mostrar['Id']?></td>
-											<td><?php echo $mostrar['Id_rol']?></td>
-											<td><?php echo $mostrar['Nombre']?></td>
-											<td><?php echo $mostrar['Apellido']?></td>
-                                            <td><?php echo $mostrar['Usuario']?></td>
-											<td><?php echo $mostrar['Estatus']?></td>
+											<td><?php echo $mostrar['Id'];?></td>
+											<td><?php echo $mostrar['Nombre_profesor']; echo " ";?><?php echo $mostrar['Apellido'];?></td>
+											<td><a href="vergp.php?id=<?php echo $mostrar['Id']?>">Ver Grados asignados</a></td>
+											<td> 
+												<a href="editarp.php?id=<?php echo $mostrar['Id']?>">Editar</a>
+												<a href="eliminarp.php?id=<?php echo $mostrar['Id']?>">Eliminar</a>
+											</td>
+                                            
 										</tr>
                                         <?php
                                         }

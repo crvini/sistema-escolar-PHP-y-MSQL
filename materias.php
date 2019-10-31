@@ -1,9 +1,5 @@
 <?php
-  $host = "localhost";
-  $user = "root";
-  $clave = "";
-  $bd = "proyectoU";
-  $conectar = mysqli_connect($host,$user,$clave,$bd);
+require 'conexion.php';
 ?>
 
 <!DOCTYPE html>
@@ -199,7 +195,7 @@
                                         ?>
 										<tr>
 											<td><?php echo $mostrar['Id']?></td>
-											<td><?php echo $mostrar['Nombre']?></td>
+											<td><?php echo $mostrar['Nombre_materia']?></td>
 											<td></td>
 											<td></td>
 										</tr>

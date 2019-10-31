@@ -209,15 +209,12 @@
 									<thead>
 										<tr>
 											<th class="text-center">#</th>
-											<th class="text-center">rol</th>
-											<th class="text-center">Nombre Madre</th>
-											<th class="text-center">Nombre Padre</th>
-                                            <th class="text-center">Apellido Madre</th>
-											<th class="text-center">Apellido Padre</th>
+											<th class="text-center">Nombres de los padres</th>
+                                            <th class="text-center">Apellidos </th>
                                             <th class="text-center">Correo</th>
 											<th class="text-center">Telefono</th>
-											<th class="text-center">Usuario</th>
-											<th class="text-center">Estatus</th>
+											<th class="text-center">Información</th>
+											<th class="text-center">Acciones</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -228,16 +225,18 @@
 
                                         ?>
 										<tr>
-											<td><?php echo $mostrar['Id']?></td>
-											<td><?php echo $mostrar['Id_rol']?></td>
-											<td><?php echo $mostrar['Nombre_Materno']?></td>
-                                            <td><?php echo $mostrar['Nombre_Paterno']?></td>
-											<td><?php echo $mostrar['Apellido_Materno']?></td>
-                                            <td><?php echo $mostrar['Apellido_Paterno']?></td>
-											<td><?php echo $mostrar['Correo']?></td>
-                                            <td><?php echo $mostrar['Telefono']?></td>
-											<td><?php echo $mostrar['Usuario']?></td>
-											<td><?php echo $mostrar['Estatus']?></td>
+											<td><?php echo $mostrar['Id'];?></td>
+											<td><?php echo $mostrar['Nombre_Materno']; echo " y ";?> <?php echo $mostrar['Nombre_Paterno'];?></td>
+											<td><?php echo $mostrar['Apellido_Materno']; echo " y ";?><?php echo $mostrar['Apellido_Paterno'];?></td>
+											<td><?php echo $mostrar['Correo'];?></td>
+                                            <td><?php echo $mostrar['Telefono'];?></td>
+											<td>
+											<a href="verpa.php?id=<?php echo $mostrar['Id']?>">Ver Información de sus hijos</a>
+											</td>
+											<td> 
+												<a href="editarpa.php?id=<?php echo $mostrar['Id']?>">Editar</a>
+												<a href="eliminarpa.php?id=<?php echo $mostrar['Id']?>">Eliminar</a>
+											</td>
 										</tr>
                                         <?php
                                         }

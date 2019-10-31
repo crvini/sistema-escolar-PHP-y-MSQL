@@ -4,7 +4,6 @@ $id=$_GET['id'];
 $sql="SELECT * FROM grados WHERE Id='".$id."'";
 $result = mysqli_query($conectar, $sql);
     while ($mostrar=mysqli_fetch_array($result)){
-
     
 ?>
 <!DOCTYPE html>
@@ -165,16 +164,8 @@ $result = mysqli_query($conectar, $sql);
 											</div>
 											<div class="form-group label-floating">
 										      <label class="control-label">Nombre</label>
-                                              <input class="form-control" type="text" name="Nombre" value="<?php echo $mostrar['Nombre']?>"> 
+                                              <input class="form-control" type="text" name="Nombre" value="<?php echo $mostrar['Nombre_grado']?>"> 
 										       </div>
-											<div class="form-group label-floating">
-											  <label class="control-label">Materia</label>
-											  <input class="form-control" type="text" >
-											</div>
-											<div class="form-group label-floating">
-											  <label class="control-label">Profesor</label>
-											  <input class="form-control" type="text">
-											</div>
 										    <p class="text-center">
 										    	<button href="#!" class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i> Editar </button>
 										    </p>

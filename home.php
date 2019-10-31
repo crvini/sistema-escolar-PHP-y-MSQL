@@ -49,9 +49,6 @@
 						<li>
 							<a href="grados.php"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>Grados</a>
 						</li>
-						<li>
-							<a href="materias.php"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Materias</a>
-						</li>
 					</ul>
 				</li>
 				<li>
